@@ -1,7 +1,7 @@
 import { getNoticias } from '../../lib/notion';
 import NewsCard from '../../components/NewsCard';
 
-export const revalidate = 3600;
+export const revalidate = 300;
 
 export const metadata = {
   title: 'Notícias',

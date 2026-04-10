@@ -63,7 +63,7 @@ function CursoForm({ password, onSuccess }) {
         body: JSON.stringify(form),
       });
       const data = await res.json();
-      if (data.ok) { setMsg({ err: false, text: 'Curso criado!' }); setForm(empty); onSuccess(); }
+      if (data.ok) { await fetch('/api/revalidate', { method: 'POST', headers: { 'x-admin-password': password } }); setMsg({ err: false, text: '✓ Curso criado e site atualizado!' }); setForm(empty); onSuccess(); }
       else setMsg({ err: true, text: 'Erro ao criar curso.' });
     } catch { setMsg({ err: true, text: 'Erro de conexão.' }); }
     setSaving(false);
@@ -138,7 +138,7 @@ function NoticiaForm({ password, onSuccess }) {
         body: JSON.stringify(form),
       });
       const data = await res.json();
-      if (data.ok) { setMsg({ err: false, text: 'Notícia criada!' }); setForm(empty); onSuccess(); }
+      if (data.ok) { await fetch('/api/revalidate', { method: 'POST', headers: { 'x-admin-password': password } }); setMsg({ err: false, text: '✓ Notícia criada e site atualizado!' }); setForm(empty); onSuccess(); }
       else setMsg({ err: true, text: 'Erro ao criar notícia.' });
     } catch { setMsg({ err: true, text: 'Erro de conexão.' }); }
     setSaving(false);
@@ -254,7 +254,7 @@ export default function AdminPanel() {
               {tab === 1 && <NoticiaForm password={pw} onSuccess={() => setSuccessCount((n) => n + 1)} />}
               {successCount > 0 && (
                 <p style={{ marginTop: 16, fontSize: 13, color: '#6b5c4e', textAlign: 'center', background: '#fff3cd', padding: '8px 12px', borderRadius: 8 }}>
-                  ⚠️ Faça Redeploy no Vercel para ver as mudanças no site.
+                  ✓ Site atualizado automaticamente.
                 </p>
               )}
             </div>

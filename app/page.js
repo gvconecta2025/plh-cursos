@@ -1,7 +1,7 @@
 import { getCursos } from '../lib/notion';
 import CourseCard from '../components/CourseCard';
 
-export const revalidate = 3600; // rebuild a cada 1h
+export const revalidate = 300; // rebuild a cada 1h
 
 export const metadata = {
   title: 'Cursos Abertos | PLH Cursos',
