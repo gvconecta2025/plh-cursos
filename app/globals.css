@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ede8df;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 18px;
+  color: #2c2421;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── Header responsive ─────────────────────────────────────── */
+
+.desktop-nav {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #4a3f35;
+  border-radius: 2px;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  .hamburger-btn {
+    display: flex;
+  }
+  .mobile-nav {
+    display: block;
+  }
+}
+
+/* ─── Card grid ─────────────────────────────────────────────── */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Notion content ─────────────────────────────────────────── */
+
+.notion-content {
+  max-width: 720px;
+}
+
+.notion-content p {
+  margin-bottom: 1rem;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.notion-content h1 {
+  font-size: 28px;
+  margin: 2rem 0 0.75rem;
+}
+
+.notion-content h2 {
+  font-size: 22px;
+  margin: 1.75rem 0 0.6rem;
+}
+
+.notion-content h3 {
+  font-size: 18px;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.notion-content ul,
+.notion-content ol {
+  margin: 0.5rem 0 1rem 1.5rem;
+}
+
+.notion-content li {
+  margin-bottom: 0.4rem;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.notion-content blockquote {
+  border-left: 4px solid #c07010;
+  padding-left: 16px;
+  margin: 1rem 0;
+  color: #6b5c4e;
+  font-style: italic;
+}
+
+.notion-content code {
+  background: #d9d0c4;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-family: 'Courier New', monospace;
+}
+
+.notion-content hr {
+  border: none;
+  border-top: 1px solid #ccc5b8;
+  margin: 2rem 0;
+}
+
+/* ─── Sobre page ─────────────────────────────────────────────── */
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .sobre-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.livros-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .livros-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .livros-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+}
